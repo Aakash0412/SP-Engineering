@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SP Engineering</title>
+    <style>
+        /* Base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
+            color: #1a202c;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #1a202c;
+            color: white;
+            padding: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.03);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media(min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 0.5rem;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background: #1a202c;
+            color: white;
+            padding: 0.75rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2d3748;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .header-brand img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+  <div class="header-brand">
+    <img src="IMG_6571.JPG" alt="Logo" />
+    <h1>SP Engineering</h1>
+  </div>
+</header>
+
+    <section id="home">
+        <h2>Industrial Elevator Experts</h2>
+        <p style="text-align: center; max-width: 700px; margin: auto;">
+            Specializing in installation and assembling of industrial elevators across leading industrial zones with
+            unmatched precision and service.
+        </p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="#contact">
+                <button>Contact Us</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" style="background-color: #f8fafc;">
+        <h3>About SP Engineering</h3>
+        <p style="max-width: 800px; margin: auto; text-align: center;">
+            SP Engineering is a trusted name in the installation and assembly of industrial elevators. With a team of
+            experienced professionals and a commitment to quality and safety, we ensure every project is executed with
+            precision and in compliance with top industry standards.
+        </p>
+    </section>
+
+    <section id="services">
+        <h3>Our Core Services</h3>
+        <div class="grid">
+            <div class="service-card">
+                <h4>Elevator Installation</h4>
+                <p>Comprehensive installation services for freight and industrial elevators, compliant with modern
+                    safety standards.</p>
+            </div>
+            <div class="service-card">
+                <h4>Assembly & Commissioning</h4>
+                <p>Reliable on-site assembly of elevator systems and seamless commissioning to get your projects moving
+                    faster.</p>
+            </div>
+            <div class="service-card">
+                <h4>Maintenance Solutions</h4>
+                <p>Ongoing maintenance and support contracts to ensure elevator systems operate without interruption.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: #f8fafc;">
+        <h3>Let's Connect</h3>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 SP Engineering. Crafted with care and engineering excellence.
+    </footer>
+
+    <script>
+        // JS: Simple form validation and alert on submission
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent default form action
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !email || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            alert(`Thank you, ${name}! Your message has been sent.`);
+            form.reset();
+        });
+    </script>
+</body>
+
+</html>
